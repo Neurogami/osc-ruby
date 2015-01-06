@@ -16,8 +16,11 @@ describe OSC::OSCPacket do
     @first_blob = "this is a fake blob"
     @second_blob = "tis another fake blob"
 
+    @true_bool = true
+    @false_bool = false
+
     @builder = MessageBuilder.new
-    @builder.with_address( @address )
+    @builder.with_address @address 
   end
 
   it "should decode the address of a simple message from the network data" do
@@ -105,6 +108,14 @@ describe OSC::OSCPacket do
     args = msg.first.to_a
     args.first.must_equal( @first_blob )
   end
+
+  it "should decode messages with boolean T" do
+    sent_msg = @builder.with_bool_true.build
+    msg = OSC::OSCPacket.messages_from_network sent_msg.encode 
+    args = msg.first.to_a
+    args.first.must_equal @true_bool
+  end
+
 
   it "should decode messages with double64 types" do
     pi = 3.14159

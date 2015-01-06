@@ -29,3 +29,15 @@ describe OSC::OSCBlob do
     OSC::OSCBlob.new 1
   end
 end
+
+describe OSC::OSCTrue do
+  it "should not blow up" do
+    OSC::OSCTrue.new true
+  end
+end
+
+describe OSC::OSCFalse do
+  it "should not blow up" do
+    OSC::OSCFalse.new false
+  end
+end

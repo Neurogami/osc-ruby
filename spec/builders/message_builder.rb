@@ -31,7 +31,17 @@ class MessageBuilder
     with_arg( "s", string )
     self
   end
-  
+
+  def with_bool_true 
+    with_arg  "T", true 
+    self
+  end
+
+  def with_bool_false
+    with_arg  "F", false
+    self
+  end
+
   def with_blob( blob )
     with_arg( "b", blob )
     self

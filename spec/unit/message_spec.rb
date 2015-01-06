@@ -14,8 +14,18 @@ require File.join( File.dirname(__FILE__) , '..', 'spec_helper' )
 describe OSC::Message do
   describe "basic traits" do
     it "should have no arguments if you define none" do
-      m = OSC::Message.new( "/hi" )
+      m = OSC::Message.new "/hi" 
       m.to_a.must_equal []
+    end
+
+   it "should accept Boolean true arguments" do
+      m = OSC::Message.new "/lovable", true 
+      m.to_a.must_equal [true]
+      m.tags.must_equal "T"
+
+      m = OSC::Message.new  "/lovable", false 
+      m.to_a.must_equal [false]
+      m.tags.must_equal "F"
     end
 
     it "should accept int arguments" do
@@ -65,7 +75,6 @@ describe OSC::Message do
   
     it "should know equality" do
       @message2 = @builder.build
-    
       @message.object_id.wont_equal @message2.object_id
       @message.must_equal @message2
     end
