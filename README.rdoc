@@ -1,34 +1,42 @@
 = An OSC client for Ruby
 
-http://opensoundcontrol.org/
+http://opensoundcontrol.org
 
-== Description
+http://osc.justthebestparts.com
 
-This OSC gem originally created by Tadayoshi Funaba has been updated for ruby 1.9 compatibility.  I've made a point to make this code as expressive as possible and provide a test suite for confident hacking.  It also should be flexible enough to support most crazy ideas.
+
+== Original Description
+
+This OSC gem originally created by Tadayoshi Funaba has been updated for ruby 1.9 compatibility.    I've made a point to make this code as expressive as possible and provide a test suite for confident hacking.  It also should be flexible enough to support most crazy ideas.
 
 Compatible with ruby 1.9, 2.0 and jruby
 
 
-== Neurogami fork
+== Neurogami fork stuff
 
-Added support for two more OSC types: T (True) and F (False)
+Added basic support for two more OSC types: T (True) and F (False)
+
 
 
 
 == Install
 
-To install the Neurogami fork you need to get the source from gitub and build it yourself, then install the gem locally
+To install the Neurogami fork you should get the source from gitub and build it yourself, then install the gem locally
 
-  sudo gem i osc-ruby
+  sudo gem i osc-ruby-ng
+
+Or yu can try this:
+
+   sudo gem i osc-ruby-ng --source http://gems.neurogami.com
   
+
 for the EMServer, you will need EventMachine
 
-  sudo gem install eventmachine
+  sudo gem i eventmachine
 
 == Event Machine Basic example
   
   # compatible with ruby 1.9, 2.0 and jruby
-  require 'rubygems'
   require 'osc-ruby'
   require 'osc-ruby/em_server'
   

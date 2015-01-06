@@ -1,4 +1,5 @@
 .rvmrc
+tasks
 Manifest
 .DS_Store
 pkg/*
