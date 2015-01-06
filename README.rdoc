@@ -25,7 +25,7 @@ To install the Neurogami fork you should get the source from gitub and build it 
 
   sudo gem i osc-ruby-ng
 
-Or yu can try this:
+Or you can try this:
 
    sudo gem i osc-ruby-ng --source http://gems.neurogami.com
   
