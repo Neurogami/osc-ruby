@@ -18,6 +18,8 @@ module OSC
       args.each do |arg|
         case arg
           when Integer;     @args << OSCInt32.new(arg)
+          when TrueClass;   @args << OSCTrue.new(arg) 
+          when FalseClass;     @args << OSCFalse.new(arg)
           when Float;       @args << OSCFloat32.new(arg)
           when String;      @args << OSCString.new(arg)
           when OSCArgument; @args << arg

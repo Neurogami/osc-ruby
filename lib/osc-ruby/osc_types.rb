@@ -1,6 +1,23 @@
 require File.join( File.dirname( __FILE__ ), "osc_argument" )
 
 module OSC
+
+  class OSCTrue < OSCArgument
+    def tag() 'T' end
+    def encode() nil  end
+  end
+
+  class OSCFalse < OSCArgument
+    def tag() 'F' end
+    def encode() nil  end
+  end
+
+
+  #class OSCNil < OSCArgument
+  #  def tag() 'N' end
+  #  def encode() nil  end
+  #end
+
   class OSCInt32 < OSCArgument
     def tag() 'i' end
     def encode() [@val].pack('N').force_encoding("BINARY") end

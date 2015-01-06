@@ -8,9 +8,18 @@ This OSC gem originally created by Tadayoshi Funaba has been updated for ruby 1.
 
 Compatible with ruby 1.9, 2.0 and jruby
 
+
+== Neurogami fork
+
+Added support for two more OSC types: T (True) and F (False)
+
+
+
 == Install
 
-  sudo gem install osc-ruby
+  To install the Neurogami fork you need to get the source from gitub and build it yourself, then install the gem locally
+
+  sudo gem i osc-ruby
   
 for the EMServer, you will need EventMachine
 
@@ -23,8 +32,8 @@ for the EMServer, you will need EventMachine
   require 'osc-ruby'
   require 'osc-ruby/em_server'
   
-  @server = OSC::EMServer.new( 3333 )
-  @client = OSC::Client.new( 'localhost', 3333 )
+  @server = OSC::EMServer.new 3333 
+  @client = OSC::Client.new 'localhost', 3333 
 
   @server.add_method '/greeting' do | message |
     puts "#{message.ip_address}:#{message.ip_port} -- #{message.address} -- #{message.to_a}"
@@ -34,9 +43,9 @@ for the EMServer, you will need EventMachine
     @server.run
   end
 
-  @client.send( OSC::Message.new( "/greeting" , "hullo!" ))
+  @client.send OSC::Message.new( "/greeting" , "hullo!" )
 
-  sleep( 3 )
+  sleep 3 
   
   
 == Credits
@@ -48,3 +57,4 @@ Tadayoshi Funaba
 http://www.funaba.org/en/
 
 thx also to Toby Tripp, Brian McClain, Andreas Haller, and James Hughes
+
