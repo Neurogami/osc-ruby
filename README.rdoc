@@ -17,7 +17,7 @@ Added support for two more OSC types: T (True) and F (False)
 
 == Install
 
-  To install the Neurogami fork you need to get the source from gitub and build it yourself, then install the gem locally
+To install the Neurogami fork you need to get the source from gitub and build it yourself, then install the gem locally
 
   sudo gem i osc-ruby
   
