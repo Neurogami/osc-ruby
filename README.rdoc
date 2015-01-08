@@ -37,7 +37,7 @@ for the EMServer, you will need EventMachine
 == Event Machine Basic example
   
   # compatible with ruby 1.9, 2.0 and jruby
-  require 'osc-ruby'
+  require 'osc-ruby-ng'
   require 'osc-ruby/em_server'
   
   @server = OSC::EMServer.new 3333 
